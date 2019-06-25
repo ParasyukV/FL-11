@@ -19,7 +19,8 @@ body {
   background-color: #21232e;
   font-family: "Fresca", sans-serif;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  width: 1920px; }
 
 .header {
   background: url(../img/m-h-night.jpg) no-repeat center;

@@ -19,7 +19,8 @@ body {
   background-color: #fff;
   font-family: "Hind", sans-serif;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  width: 1920px; }
 
 .header {
   background: url(../img/m-h-day.jpg) no-repeat center;
