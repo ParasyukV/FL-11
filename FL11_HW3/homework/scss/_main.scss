@@ -1,1 +1,254 @@
-// Write your styles here
+@mixin button ($_btnBgColor, $_btnColor, $_btnBgHoverColor) {
+    padding: 15px 55px;
+    background-color: $_btnBgColor;
+    font-family: $fontSecond;
+    border: none;
+    border-radius: 3px;
+    font-size: 20px;
+    font-weight: bold;
+    color: $_btnColor;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $_btnBgHoverColor;
+    }
+}
+
+@function z-index($key) {
+  @if map-has-key($z-indexes, $key) {
+    @return map-get($z-indexes, $key);
+  }
+ 
+  @warn "Unknown `#{$key}` in $z-indexes.";
+  @return null;
+}
+ 
+.logo {
+    display: flex;
+    align-items: center;
+    padding-left: 190px;
+
+    & p {
+        font-size: 30px;
+        font-weight: 600;
+        margin-left: 15px;
+
+        & span {
+            display: block;
+            font-size: 16px;
+            text-align: center;
+            font-weight: normal;
+            margin-top: -5px;
+        }
+    }
+
+    & img {
+        height: 60px;
+    }
+}
+
+body {
+    background-color: $contentBackground;
+    font-family: $fontFirst;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background: $backgroundImage no-repeat center;
+    background-size: cover;
+    height: 100vh;
+    border-radius: 0 0 40% 0;
+    color: $headerTextColor;
+
+    .landing-logo {
+        @extend .logo;
+        color: $headerTextColor;        
+    }
+
+    &_heading {
+        position: relative;
+        z-index: z-index(header);
+        font-size: 80px;
+        font-weight: 900;
+        font-family: $fontSecond;
+        width: 45%;
+        margin-left: 190px;
+        margin-top: 60px;
+
+        &::after {
+            content: '';
+            background-color: $underlineColor;
+            position: absolute;
+            z-index: z-index(underline-header);
+            display: block;
+            width: 340px;
+            height: 28px;
+            bottom: 10px;
+        }
+    }
+
+    &_text {
+        margin-left: 190px;
+        margin-top: -80px;
+        font-size: 18px;
+        width: 55%;
+        line-height: 1.5;
+        white-space: pre-line;
+    }
+
+    &_button {
+        @include button($buttonColor, $colorLightBeige, $buttonColorHover);
+        margin-left: 195px;
+        margin-top: 95px;
+    }
+}
+
+.section {
+    text-align: center;
+
+    &_text {
+        z-index: z-index(header);
+        color: $sectionTextColor;
+        position: relative;
+        font-family: $fontSecond;
+        font-size: 46px;
+        font-weight: 600;
+
+        &::after {
+            content: '';
+            background-color: $underlineColor;
+            position: absolute;
+            z-index: z-index(underline-header);
+            display: block;
+            width: 207px;
+            height: 13px;
+            bottom: 10px;
+            left: 960px;
+        }
+    }
+
+    &_card_wrap {
+        display: flex;
+        justify-content: center;
+        margin: 0 50px;
+
+        .section_card {
+            background-color: $contentColor;
+            border-radius: 8px;
+            width: 30%;
+            padding: 25px 0 0 0;
+            margin: 20px;
+
+            &_heading {
+                z-index: z-index(header);
+                color: $cardHeadingColor;
+                font-family: $fontSecond;
+                position: relative;
+                display: inline-block;
+                font-size: 28px;
+                font-weight: 600;
+            }
+
+            &_underline {
+                position: absolute;
+                display: block;
+                background-color: $underlineColor;
+                z-index: z-index(underline-header);
+                width: 100%;
+                height: 15px;
+                bottom: 0;
+            }
+
+            &_text {
+                color: $colorLightBlue;
+                padding: 10px 35px 20px;
+                line-height: 1.5;
+                font-size: 21px;
+            }
+
+            &_img {
+                width: 90%;
+                border-radius: 10px;
+            }
+        }
+    }
+
+    &_banner {
+        display: flex;
+        position: relative;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 170px;
+        background: $gradient;
+        width: 1200px;
+        height: 180px;
+        border-radius: 4px;
+        left: 310px;
+        bottom: -90px;
+
+        &_text_wrap {
+            text-align: left;
+        }
+
+        &_heading {
+            z-index: z-index(header);
+            position: relative;
+            color: $cardHeadingColor;
+            font-family: $fontSecond;
+            font-size: 30px;
+            font-weight: 900;
+
+            &::after {
+                content: '';
+                display: block;
+                background-color: $underlineColor;
+                position: absolute;
+                z-index: z-index(underline-header);
+                width: 64px;
+                height: 10px;
+                left: 120px;
+                bottom: 6px;
+            }
+        }
+
+        &_text {
+            color: $colorLightBlue;
+        }
+
+        &_button {
+            @include button($buttonColor, $colorLightBeige, $buttonColorHover);
+        }
+    }
+}
+
+.footer {
+    display: flex;
+    width: 100%;
+    min-height: 300px;
+    background-color: $contentColor;
+    color: $colorLightBlue;
+
+    .footer-wrap {
+        display: flex;
+        align-items: center;
+    }
+
+    &_logo {
+        @extend .logo;
+        padding-top: 100px;        
+    }
+
+    &_text {
+        font-size: 17px;
+        width: 370px;
+        padding-top: 100px;
+        margin-left: 305px;
+    }
+
+    &-cr {
+        padding-top: 100px;
+        margin-left: 400px;
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,20 @@
+$contentBackground: #fff;
+$backgroundImage: url(../img/m-h-day.jpg);
+$headerTextColor: #2c2f3c;
+$underlineColor: #14a0c7;
+$buttonColor: #699900;
+$buttonColorHover: #8bca01;
+$contentColor: #21232e;
+$sectionTextColor: #2c2f3c;
+$cardHeadingColor: #fff;
+$colorLightBeige: #f2f3cf;
+$colorLightBlue:#c0c3ce;
+$gradient: linear-gradient(45deg, #65950d, #305ece);
+$fontFirst: 'Hind',
+sans-serif;
+$fontSecond: 'Source Sans Pro',
+sans-serif;
+$z-indexes: (
+    header: 1,
+    underline-header: -1
+);
