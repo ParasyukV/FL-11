@@ -33,7 +33,8 @@ if (mail === null || mail.length === 0) {
         ask = confirm('Do you want to change your password?');
         if (ask === true) {
             passCheck = prompt('Enter your old password', '');
-            if (mail === user.mail && passCheck === user.password || mail === admin.mail && passCheck === admin.password) {
+            if (mail === user.mail && passCheck === user.password ||
+                mail === admin.mail && passCheck === admin.password) {
                 newPass = prompt('Enter your new password', '');
                 if (newPass.length >= passLenght) {
                     newPassCheck = prompt('Enter the new password again', '');
@@ -53,7 +54,7 @@ if (mail === null || mail.length === 0) {
         } else {
             alert('You have failed the change.');
         }
-    } else if (pass === null || password.lenght === 0) {
+    } else if (pass === null || pass.length === 0) {
         alert(massages.canceled);
     } else {
         alert(massages.passWrong);
