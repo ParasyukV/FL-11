@@ -4,7 +4,7 @@ let prize2 = 50;
 let prize3 = 25;
 let startPrize = [prize1, prize2, prize3];
 let won = false;
-let gameIterations = 5;
+let gameIterations = 10;
 let attemptIndex = 0;
 let confirmed;
 
@@ -46,8 +46,6 @@ if (!confirm(msg.confirm)) {
     while (attemptIndex < gameIterations) {
         let randomNumber = Math.floor(Math.random() * (cfg.currentRange + 1));
 
-        console.log(randomNumber);
-
         while (!won && tryIndex < cfg.maxAttempts) {
             let possiblePrize = cfg.possiblePrize[tryIndex];
             let startMsg = msg.startMsg
@@ -83,7 +81,6 @@ if (!confirm(msg.confirm)) {
                     cfg.totalPrize = 0;
                 }
             }
-
 
         } else {
             cfg.totalPrize = 0;
