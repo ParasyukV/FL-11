@@ -1,4 +1,4 @@
-function reverse(number) {
+function reverseNumber(number) {
     let reversed = 0;
 
     while (number !== 0) {
@@ -11,4 +11,4 @@ function reverse(number) {
     return reversed;
 }
 
-reverse(123456789);
+reverseNumber(123456789);
