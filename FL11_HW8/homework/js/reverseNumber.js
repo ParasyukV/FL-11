@@ -1,5 +1,5 @@
 function reverse(number) {
-    var reversed = 0;
+    let reversed = 0;
 
     while (number !== 0) {
         reversed *= 10;
