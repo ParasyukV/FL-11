@@ -66,6 +66,7 @@ function executeforEach(arr, func) {
     }
 }
 
+/* eslint no-magic-numbers: ["off", { "ignoreArrayIndexes": true }] */
 executeforEach([1, 2, 3], function (el) {
     console.log(el)
 })
